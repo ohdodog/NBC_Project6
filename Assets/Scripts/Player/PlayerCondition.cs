@@ -43,4 +43,17 @@ public class PlayerCondition : MonoBehaviour, IDamagable
         onTakeDamage?.Invoke();
 
     }
+
+    public void EatApple()
+    {
+        StartCoroutine(SpeedBuff());
+    }
+
+    private IEnumerator SpeedBuff()
+    {
+        int speedBuff = 20;
+        CharacterManager.Instance.Player.controller.moveSpeed += speedBuff;
+        yield return new WaitForSecondsRealtime(5);
+        CharacterManager.Instance.Player.controller.moveSpeed -= speedBuff;
+    }
 }

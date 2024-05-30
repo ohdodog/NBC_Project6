@@ -24,6 +24,7 @@ public class UIInventory : MonoBehaviour
 
     private PlayerController controller;
     private PlayerCondition condition;
+    private Coroutine speedUpCoroutine;
 
     ItemData selectedItem;
     int selectedItemIndex;
@@ -189,6 +190,9 @@ public class UIInventory : MonoBehaviour
                 {
                     case ConsumableType.Health:
                         condition.Heal(selectedItem.consumables[i].value);
+                        break;
+                    case ConsumableType.Buff:
+                        condition.EatApple();
                         break;
                 }
             }

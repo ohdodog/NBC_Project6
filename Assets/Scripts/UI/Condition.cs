@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem.XR;
 using UnityEngine.UI;
 
 public class Condition : MonoBehaviour
@@ -35,5 +36,4 @@ public class Condition : MonoBehaviour
     {
         curValue = Mathf.Max(curValue - value, 0);
     }
-
 }
